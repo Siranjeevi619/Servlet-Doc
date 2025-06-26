@@ -20,7 +20,8 @@ public class LoginServlet extends HttpServlet {
         if ("admin".equals(username) && "1234".equals(password)) {
             HttpSession session = req.getSession();
             session.setAttribute("username", username);
-            res.sendRedirect("dashboard");
+//            res.sendRedirect("dashboard.jsp");
+            req.getRequestDispatcher("dashboard.jsp").forward(req, res);
         } else {
             res.getWriter().println("Invalid credentials. <a href='login.html'>Try again</a>");
         }
