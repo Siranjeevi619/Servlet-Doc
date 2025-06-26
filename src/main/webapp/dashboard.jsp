@@ -6,5 +6,8 @@
 <body>
 <% String name = request.getParameter("username"); %>
 <%= name%>
+<form action="logout">
+    <input type="submit"/>
+</form>
 </body>
 </html>
